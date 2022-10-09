@@ -1,0 +1,178 @@
+export const links = [
+  {
+    name: "Home",
+    path: "/",
+    number: 1,
+  },
+  {
+    name: "AllCountries",
+    path: "/countries",
+    number: 2,
+  },
+  {
+    name: "SignIn",
+    path: "/signin",
+    number: 3,
+  },
+];
+
+export const country1 = require("./images/countries/president_rwanda 2.png");
+export const country2 = require("./images/countries/president_china 1.png");
+export const country3 = require("./images/countries/president-Norway.png");
+export const country4 = require("./images/countries/togo__president.png");
+export const country5 = require("./images/countries/president_indonesia.png");
+export const country6 = require("./images/countries/uganda__president.png");
+export const country7 = require("./images/countries/president-Norway.png");
+export const country8 = require("./images/countries/president-Norway.png");
+export const country9 = require("./images/countries/president_indonesia.png");
+export const country10 = require("./images/countries/president_rwanda 2.png");
+export const country12 = require("./images/countries/president_indonesia.png");
+export const country13 = require("./images/countries/president_rwanda 2.png");
+export const country14 = require("./images/countries/president_rwanda 2.png");
+
+const countries = [
+  {
+    code: 1,
+    name: "Rwanda",
+    native: "",
+    image: country1,
+    city: "Kigali",
+    phone: "+250",
+    continent: "Africa",
+    currency: "Fwr",
+    state: "",
+    languages: ["Kiny", "kiswahili", "French", "Engish"],
+    emoji: "🇨🇼",
+  },
+  {
+    code: 2,
+    name: "Rwanda",
+    native: "",
+    image: country2,
+    city: "Kigali",
+    phone: "+250",
+    continent: "Africa",
+    currency: "Fwr",
+    state: "",
+    languages: ["Kiny", "kiswahili", "French", "Engish"],
+    emoji: "🇨🇼",
+  },
+  {
+    code: 3,
+    name: "Rwanda",
+    native: "",
+    image: country2,
+    city: "Kigali",
+    phone: "+250",
+    continent: "Africa",
+    currency: "Fwr",
+    state: "",
+    languages: ["Kiny", "kiswahili", "French", "Engish"],
+    emoji: "🇨🇼",
+  },
+  {
+    code: 4,
+    name: "Rwanda",
+    native: "",
+    image: country3,
+    city: "Kigali",
+    phone: "+250",
+    continent: "Africa",
+    currency: "Fwr",
+    state: "",
+    languages: ["Kiny", "kiswahili", "French", "Engish"],
+    emoji: "🇨🇼",
+  },
+  {
+    code: 5,
+    name: "Rwanda",
+    native: "",
+    image: country4,
+    city: "Kigali",
+    phone: "+250",
+    continent: "Africa",
+    currency: "Fwr",
+    state: "",
+    languages: ["Kiny", "kiswahili", "French", "Engish"],
+    emoji: "🇨🇼",
+  },
+  {
+    code: 6,
+    name: "Rwanda",
+    native: "",
+    image: country5,
+    city: "Kigali",
+    phone: "+250",
+    continent: "Africa",
+    currency: "Fwr",
+    state: "",
+    languages: ["Kiny", "kiswahili", "French", "Engish"],
+    emoji: "🇨🇼",
+  },
+  {
+    code: 7,
+    name: "Rwanda",
+    native: "",
+    image: country6,
+    city: "Kigali",
+    phone: "+250",
+    continent: "Africa",
+    currency: "Fwr",
+    state: "",
+    languages: ["Kiny", "kiswahili", "French", "Engish"],
+    emoji: "🇨🇼",
+  },
+  {
+    code: 8,
+    name: "Rwanda",
+    native: "",
+    image: country7,
+    city: "Kigali",
+    phone: "+250",
+    continent: "Africa",
+    currency: "Fwr",
+    state: "",
+    languages: ["Kiny", "kiswahili", "French", "Engish"],
+    emoji: "🇨🇼",
+  },
+  {
+    code: 9,
+    name: "Rwanda",
+    native: "",
+    image: country8,
+    city: "Kigali",
+    phone: "+250",
+    continent: "Africa",
+    currency: "Fwr",
+    state: "",
+    languages: ["Kiny", "kiswahili", "French", "Engish"],
+    emoji: "🇨🇼",
+  },
+  {
+    code: 10,
+    name: "Rwanda",
+    native: "",
+    image: country10,
+    city: "Kigali",
+    phone: "+250",
+    continent: "Africa",
+    currency: "Fwr",
+    state: "",
+    languages: ["Kiny", "kiswahili", "French", "Engish"],
+    emoji: "🇨🇼",
+  },
+  {
+    code: 11,
+    name: "Rwanda",
+    native: "",
+    image: country12,
+    city: "Kigali",
+    phone: "+250",
+    continent: "Africa",
+    currency: "Fwr",
+    state: "",
+    languages: ["Kiny", "kiswahili", "French", "Engish"],
+    emoji: "🇨🇼",
+  },
+];
+export default countries;

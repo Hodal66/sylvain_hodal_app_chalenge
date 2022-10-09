@@ -1,0 +1,117 @@
+.search_container {
+  margin: 2rem;
+  padding-left: 4rem;
+}
+.search_container .search {
+  padding: 0.6rem 1rem;
+  width: 22rem;
+  border-radius: 1rem 0rem 0rem 1rem;
+  border: none;
+}
+.search_container .searchbtn {
+  padding: 0.6rem 1rem;
+  background-color: var(--primary-color);
+  color: var(--third-color);
+  border-radius: 0rem 1rem 1rem 0rem;
+  right: -2rem;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+/* All about cards */
+ .card{
+  background-color: var(--primary-color);
+  margin:1rem;
+  width:21rem;
+  border-radius:2rem 0.5rem 2rem 0.5rem;
+ padding:1rem;
+}
+/* All about C0ouuntries */
+.container-container{
+display: flex;
+flex-direction: column;
+  padding: 1rem;
+
+}
+.country_image-container{
+  position: relative;
+
+}
+.country_image-container img{
+  width:17rem;
+  border:2px solid white;
+  border-radius: 0.5rem;
+
+}
+.image__content{
+  display:flex;
+  flex-direction: row;
+  
+  background-color:#005385;
+  opacity:60%;
+  position: relative;
+}
+
+.image__content h1, h2{
+font-size:1rem;
+}
+
+.image__content h1{
+  display:flex;
+}
+
+
+.left__side-content{
+  height: 3rem;
+  padding:0.5rem;
+}
+.buttons_controls-container{
+  display:flex;
+}
+.buttons_controls-container h1 {
+  font-size:1rem;
+  display:flex;
+  margin: -1rem 0rem 0rem -2rem;
+}
+.add_photos-contents, .add_stories-contents{
+  display:flex;
+  flex-direction:row;
+  height:1rem;
+}
+.explore__more{
+  margin-top:0.5rem;
+}  
+
+
+/* All countries container  */
+
+.cantents_Cards-container{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  padding:1.5rem;
+}
+
+.black__btn{
+  background-color: var(--third-color);
+}
+
+.buttons_controls-container .black__btn{
+  border-radius: 0.2rem;
+  padding-bottom:0.5rem;
+ 
+}
+.buttons_controls-container p{
+  margin-left: 1rem;
+}
+.buttons_controls-container .btn{
+  border-radius: 0.2rem;
+  padding:0.3rem 0.5rem;
+
+}
+
+.right__side-content{
+  margin-left: 4rem;
+  margin-top: 1rem;
+}
