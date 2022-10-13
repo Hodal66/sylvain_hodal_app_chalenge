@@ -25,8 +25,8 @@ const Comment = ({ setOpenModal }) => {
       </div>
       <div className="flex justify-end text-sm">
         <div className="w-[20%] flex justify-evenly pt-3">
-          <FiEdit className="w-[30px] h-[30px]" onClick={openIt} />
-          <MdDelete className="w-[30px] h-[30px]" />
+          <FiEdit className="w-[30px] h-[30px] cursor-pointer" onClick={openIt} />
+          <MdDelete className="w-[30px] h-[30px] cursor-pointer" />
         </div>
       </div>
     </div>

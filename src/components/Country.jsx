@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "../UI/Card";
 import { Link } from "react-router-dom";
-function Countries({ name, image, continent, country, city, emoji }) {
+function Countries({
+  name,
+  image,
+  continent,
+  country,
+  city,
+  setOpenModal,
+  emoji,
+  openModal,
+}) {
   return (
     <div>
       <Card className="country">
@@ -22,11 +31,14 @@ function Countries({ name, image, continent, country, city, emoji }) {
             <div className="related__photos pl-2 w-32 opacity-70">
               <h1>Related_Photos</h1>
               <div className="add_photos-contents ">
-                <Link to="/signin">
-                  <button className="plus_btn bg-white text-black  rounded pr-2 pl-2 ">
-                    +
-                  </button>
-                </Link>
+                <button
+                  className="plus_btn bg-white text-black  rounded pr-2 pl-2 "
+                  onClick={() => {
+                    setOpenModal(true);
+                  }}
+                >
+                  +
+                </button>
 
                 <p>13,000 </p>
               </div>
@@ -41,11 +53,14 @@ function Countries({ name, image, continent, country, city, emoji }) {
             <div className="related__photos pl-2 pb-2 w-32 opacity-70">
               <h1>Related_Stories</h1>
               <div className="add_photos-contents">
-                <Link to="/signin">
-                  <button className="plus_btn bg-white text-black rounded pr-2 pl-2 ">
-                    +
-                  </button>
-                </Link>
+                <button
+                  className="plus_btn bg-white text-black rounded pr-2 pl-2 "
+                  onClick={() => {
+                    setOpenModal(true);
+                  }}
+                >
+                  +
+                </button>
                 <p>13,000 </p>
               </div>
               <div className="bg-white border rounded w-24 mt-3">

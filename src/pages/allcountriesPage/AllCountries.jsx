@@ -7,6 +7,8 @@ import countries from "../../data";
 import { gql, useQuery } from "@apollo/client";
 import Pagination from "../../components/Pagination";
 import Countries from "../../components/Country";
+import NewModalComment from "../../components/FormsPackage/NewModalComment";
+import NewModalPhoto from "../../components/FormsPackage/NewModalPhoto";
 
 export const GET_ALL_COUNTRIES = gql`
   query {
@@ -65,7 +67,10 @@ const override = {
   borderColor: "red",
 };
 function AllCountries() {
-  const { data, loading } = useQuery(GET_ALL_COUNTRIES);
+  const { loading, error, data } = useQuery(GET_ALL_COUNTRIES);
+  console.log(data)
+  localStorage.setItem("data_come", JSON.stringify(data));
+  const [openModal, setOpenModal] = useState(false);
 
   console.log(data);
   const color = "yellow";
@@ -88,6 +93,9 @@ function AllCountries() {
         </Header>
       )}
       <section className="flex ">
+        {openModal && <NewModalComment setOpenModal={setOpenModal} />}
+        {openModal && <NewModalPhoto setOpenModal={setOpenModal} />}
+
         <div className="search_container w-1/2">
           <input
             type="search"
@@ -111,7 +119,9 @@ function AllCountries() {
                 <>
                   <Countries
                     key={code}
+                    setOpenModal={setOpenModal}
                     name={name}
+                    openModal={openModal}
                     continent={continent}
                     image={image}
                     country={country}
