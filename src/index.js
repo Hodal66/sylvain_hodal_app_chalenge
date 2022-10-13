@@ -7,7 +7,7 @@ import "./index.css";
 import { ApolloClient, InMemoryCache, ApolloProvider, HttpLink } from "@apollo/client";
 
 const client = new ApolloClient({
-  link: new HttpLink({ uri: 'http://localhost:4000' }),
+  link: new HttpLink({ uri: 'https://countries.trevorblades.com/graphql' }),
   fetchOptions: {
     mode: 'no-cors',
   },

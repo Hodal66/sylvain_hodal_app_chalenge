@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
 import "./gallery.css";
 import { galleryPhotoes } from "../../data";
 import Photo from "../../components/Photo";
 import { gql, useQuery } from "@apollo/client";
 import { MdLocationPin } from "react-icons/md";
+import NewModalGallery from "./NewModalGallery";
+import EditModalGallery from "./EditModalGallery";
 export const GET_ALL_COUNTRIES = gql`
   query {
     getAllCountries {
@@ -64,12 +66,16 @@ const override = {
 
 function Gallery() {
   const { data, loading } = useQuery(GET_ALL_COUNTRIES);
+  const [openModal, setOpenModal] = useState(false);
+  const [openModal2, setOpenModal2] = useState(false);
+
 
   console.log(data);
   const color = "yellow";
 
   return (
     <div>
+      {openModal && <NewModalGallery setOpenModal={setOpenModal} />}
       <ClipLoader
         color={color}
         loading={loading}
@@ -103,18 +109,25 @@ function Gallery() {
           </h1>
         </div>
         <h1 className="">Gallery</h1>
-        <button className="bg-white text-blue-900 h-1/2 p-2 mt-8 ml-24 rounded-lg">
+        <button
+          className="bg-white text-blue-900 h-1/2 p-2 mt-8 ml-24 rounded-lg"
+          onClick={() => {
+            setOpenModal(true);
+          }}
+        >
           Add Photo
         </button>
       </div>
       <section className="Section-container">
         <section className="countries">
+          {openModal2 && <EditModalGallery setOpenModal={setOpenModal2} />}
           <div className="cantents_Cards-container">
             {galleryPhotoes.map(({ id, author, image, date }) => {
               return (
                 <>
                   <Photo
                     key={id}
+                    setOpenModal={setOpenModal2}
                     author={author}
                     image={image}
                     date={date}

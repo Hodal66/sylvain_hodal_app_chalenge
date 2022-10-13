@@ -7,6 +7,8 @@ import countries from "../../data";
 import { gql, useQuery } from "@apollo/client";
 import Pagination from "../../components/Pagination";
 import Countries from "../../components/Country";
+import NewModalComment from "../../components/FormsPackage/NewModalComment";
+import NewModalPhoto from "../../components/FormsPackage/NewModalPhoto";
 
 export const GET_ALL_COUNTRIES = gql`
   query {
@@ -65,7 +67,10 @@ const override = {
   borderColor: "red",
 };
 function AllCountries() {
-  const { data, loading } = useQuery(GET_ALL_COUNTRIES);
+  const { loading, error, data } = useQuery(GET_ALL_COUNTRIES);
+  console.log(data);
+  localStorage.setItem("data_come", JSON.stringify(data));
+  const [openModal, setOpenModal] = useState(false);
 
   console.log(data);
   const color = "yellow";
@@ -82,22 +87,30 @@ function AllCountries() {
       {loading ? (
         <div>Data is loading .....</div>
       ) : (
-        <Header title="Our Trainers " image={HeaderImage}>
-          Now Enjoy New world by exploring by searching your prefered country
-          and exploring All country library you are welcome🏹🚀
-        </Header>
+        <div className="backGroungImage ">
+          <div className="p-24 flex flex-col justify-center w-full px-48">
+            <p className="text-4xl  py-4">Welcome to All Countries</p>
+            <p className="text-xl ">
+              Now Enjoy New world by exploring by searching your prefered
+              country and exploring All country library you are welcome🏹🚀
+            </p>
+          </div>
+        </div>
       )}
       <section className="flex ">
+        {openModal && <NewModalComment setOpenModal={setOpenModal} />}
+        {openModal && <NewModalPhoto setOpenModal={setOpenModal} />}
+
         <div className="search_container w-1/2">
           <input
             type="search"
             name="search"
             right__side-content
             id=""
-            className="search"
+            className="search hover:border-blue-400 hover:ring-offset-4 border border-blue-400"
             placeholder="Search any country you want "
           />
-          <input type="button" value="Search" className="searchbtn" />
+          <input type="button" value="Search" className="searchbtn" autoFocus />
         </div>
         <div className="w-1/2 flex justify-around mt-8 h-full">
           <Pagination />
@@ -111,7 +124,9 @@ function AllCountries() {
                 <>
                   <Countries
                     key={code}
+                    setOpenModal={setOpenModal}
                     name={name}
+                    openModal={openModal}
                     continent={continent}
                     image={image}
                     country={country}

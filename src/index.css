@@ -10,6 +10,7 @@
   text-decoration: none;
   box-sizing: border-box;
   scroll-behavior: auto;
+  font-family:serif;
 }
 
 
@@ -50,7 +51,7 @@ header{
   border-bottom:10px solid rgb(67, 67, 67);
 }
 .header__container-bg{
-  position:absolute;
+  /* position:absolute; */
   width:100vw;
 
 }

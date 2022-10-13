@@ -144,3 +144,9 @@ border: 1px solid rgb(81, 73, 173);
 box-shadow: 4px 4px 4px rgb(81, 73, 173);
 
 }
+
+.backGroungImage{
+  background-image: url("../../assets/a.jpg");
+  
+
+}
