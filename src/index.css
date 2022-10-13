@@ -50,7 +50,7 @@ header{
   border-bottom:10px solid rgb(67, 67, 67);
 }
 .header__container-bg{
-  position:absolute;
+  /* position:absolute; */
   width:100vw;
 
 }
