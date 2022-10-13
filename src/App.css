@@ -2,3 +2,11 @@
     background-color: #ffffff;
     width:100vw;
 }
+
+.background__image{
+    background-image: url("./assets/a.jpg");
+    height: 40vh;
+}
+.backgroung_Comment_image{
+    background-color: var(--second-color);
+}
