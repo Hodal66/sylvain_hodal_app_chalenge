@@ -1,0 +1,1 @@
+export const ImageData = require("./images/rwanda_convetion.png")
