@@ -1,0 +1,10 @@
+.backgroundImageContainer{
+background-image: url("../../assets/b.jpg");
+height:40vh;
+background-repeat:no-repeat;
+background-size:100%;
+}
+.backgroundImageContainer h1{
+    width:100;
+    align-items:center
+}

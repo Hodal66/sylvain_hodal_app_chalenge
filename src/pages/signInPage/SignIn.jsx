@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 function SignIn() {
   return (
-    <div className="container_sign_in">
+    <div className="container_sign_in bg-blue-900">
       <form action="">
         <div className="header_part">
           <div className="image_container">
@@ -35,7 +35,7 @@ function SignIn() {
             <button className="btn btn_green">Send</button>
           </div>
           <div className="goto_signin_page">
-            <p id="already">
+            <p id="already" className="text-blue-900">
               <span>
                 <Link to="/signup">You don't Have an Acount ? sign up</Link>
               </span>

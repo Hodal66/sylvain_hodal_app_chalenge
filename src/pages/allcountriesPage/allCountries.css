@@ -3,13 +3,13 @@
   padding-left: 4rem;
 }
 .search_container .search {
-  padding: 0.6rem 1rem;
+  padding: 0.5rem 1rem;
   width: 22rem;
   border-radius: 1rem 0rem 0rem 1rem;
   border: none;
 }
 .search_container .searchbtn {
-  padding: 0.6rem 1rem;
+  padding: 0.5rem 1rem;
   background-color: var(--primary-color);
   color: var(--third-color);
   border-radius: 0rem 1rem 1rem 0rem;
@@ -20,6 +20,7 @@
 
 
 
+
 /* All about cards */
  .card{
   background-color: var(--primary-color);
@@ -27,6 +28,10 @@
   width:21rem;
   border-radius:2rem 0.5rem 2rem 0.5rem;
  padding:1rem;
+ box-shadow: 1px 0.5px 10px var(--primary-color);
+}
+.card:hover{
+  background-color: var(--primary-hover-bg-color);
 }
 /* All about C0ouuntries */
 .container-container{
@@ -42,16 +47,19 @@ flex-direction: column;
 .country_image-container img{
   width:17rem;
   border:2px solid white;
-  border-radius: 0.5rem;
+  border-bottom: none;
+  border-radius: 0.5rem 0.5rem 0rem 0rem;
 
 }
 .image__content{
   display:flex;
   flex-direction: row;
-  
-  background-color:#005385;
-  opacity:60%;
+  background-color:#1d1b96;
+  color:#fff;
+  opacity:40%;
+  height:4rem;
   position: relative;
+  border-radius:0rem 0rem 0.5rem 0.5rem;
 }
 
 .image__content h1, h2{
@@ -79,6 +87,8 @@ font-size:1rem;
   display:flex;
   flex-direction:row;
   height:1rem;
+  margin-top: -1.5rem;
+  margin-bottom:1rem;
 }
 .explore__more{
   margin-top:0.5rem;
@@ -110,8 +120,27 @@ font-size:1rem;
   padding:0.3rem 0.5rem;
 
 }
+.buttons_controls-container .btn:hover{
+  width:7rem;
+}
+.plus_btn:hover{
+  background-color: var(--second-color);
+  color:white;
+}
 
 .right__side-content{
   margin-left: 4rem;
   margin-top: 1rem;
+}
+.related__photos{
+border: 1px solid rgb(20, 11, 117);
+box-shadow: 4px 4px 4px rgb(20, 11, 117);
+border-radius:0.5rem;
+margin-top: 0.5rem;
+width:60%;
+}
+.related__photos:hover{
+border: 1px solid rgb(81, 73, 173);
+box-shadow: 4px 4px 4px rgb(81, 73, 173);
+
 }

@@ -1,6 +1,6 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; 
 
 *, ::before, ::after{
   margin:0;
@@ -14,12 +14,13 @@
 
 
 :root{
-
+--tw-bg-opacity: 1;
+--hover-bg-opacity: 0.7;
 --danger-color:rgb(181, 39, 56);
 --second-color:rgb(0,0,0);
 --third-color:rgb(255,255,255);
---fourth-color:rgb(0, 83, 133);
---primary-color:rgba(63, 149, 149);
+--primary-color:rgb(30 58 138 / var(--tw-bg-opacity));
+--primary-hover-bg-color:rgb(30 58 138 / var( --hover-bg-opacity));
 --primary-transparent-green:rgba(116, 184, 184, 0.9);
 --transition:all 5000ms ease-out;
 }
@@ -33,14 +34,13 @@ body{
 
 /* GENERAL STYLE FOR ALL HEADERS */
 h1,h2,h3{
-  color:var(--third-color);
   padding:2rem;
 }
 header{
   background-color: var(--danger-color);
   /* margin-top:5rem; */
-  overflow:hidden;
-}
+  /* overflow:hidden; */
+ }
 .header__container{
   background-color:var(--second-color);
   height:20rem;
@@ -67,4 +67,4 @@ margin-inline: auto;
 }
 .header__content p{
   font-size:1.2rem;
-}
+ }  

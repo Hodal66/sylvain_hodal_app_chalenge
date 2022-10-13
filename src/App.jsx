@@ -6,6 +6,7 @@ import AllCountries from "./pages/allcountriesPage/AllCountries";
 import SignUp from "./pages/signInPage/SignUp";
 import SignIn from "./pages/signInPage/SignIn";
 import CreateComment from "./pages/FunsAndComents/CreateComment";
+import Gallery from "./pages/GalleryCountry/Gallery";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/allcountries" element={<AllCountries />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signin" element={<SignIn />} />
+          <Route path="/gallery" element={<Gallery />} />
           <Route path="/create-comments" element={<CreateComment />} />
         </Routes>
       </BrowserRouter>

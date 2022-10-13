@@ -30,6 +30,63 @@ export const country12 = require("./images/countries/president_indonesia.png");
 export const country13 = require("./images/countries/president_rwanda 2.png");
 export const country14 = require("./images/countries/president_rwanda 2.png");
 
+export const galleryPhotoes = [
+  {
+    id: 1,
+    image: country1,
+    author: "Muheto hodal",
+    date: "01 oct 2022",
+  },
+  {
+    id: 2,
+    image: country2,
+    author: "Muheto hodal",
+    date: "01 oct 2022",
+  },
+  {
+    id: 3,
+    image: country3,
+    author: "Muheto hodal",
+    date: "01 oct 2022",
+  },
+  {
+    id: 4,
+    image: country4,
+    author: "Muheto hodal",
+    date: "01 oct 2022",
+  },
+  {
+    id: 5,
+    image: country5,
+    author: "Muheto hodal",
+    date: "01 oct 2022",
+  },
+  {
+    id: 6,
+    image: country6,
+    date: "01 oct 2022",
+    author: "Muheto hodal",
+  },
+  {
+    id: 7,
+    image: country7,
+    date: "01 oct 2022",
+    author: "Muheto hodal",
+  },
+  {
+    id: 8,
+    image: country8,
+    date: "01 oct 2022",
+    author: "Muheto hodal",
+  },
+  {
+    id: 9,
+    image: country9,
+    date: "01 oct 2022",
+    author: "Muheto hodal",
+  },
+];
+
 const countries = [
   {
     code: 1,

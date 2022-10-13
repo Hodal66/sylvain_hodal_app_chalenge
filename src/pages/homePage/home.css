@@ -1,6 +1,5 @@
-.container{
-    display: flex;
-    height:80%;
+.Home_container{
+   
 }
 .left__content-container{
     width:50vw;
@@ -24,11 +23,10 @@
     cursor:pointer;
 }
 .right__content-container{
-    width:50%;
-    background-color:#fff;
+    width:50vw;
+   display:none;
 }
 
 .right__content-container img{
-    width:50vw;
-    height:80vh;
+   background-color:black;
 }

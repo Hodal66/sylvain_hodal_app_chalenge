@@ -1,6 +1,5 @@
 .container_sign_in{
     background-image: url("../../images/sign_in_bg.jpg");
-    background-color: red;
     height:100vh;
     width:100vw;
     background-repeat: no-repeat;
@@ -20,7 +19,9 @@ form{
     border-radius:1rem 1rem 0rem 0rem;
     display: flex;
     padding:0.2rem 1rem;
-    background-color:var(--primary-color);
+    --tw-bg-opacity: 1;
+    background-color: rgb(30 58 138 / var(--tw-bg-opacity));
+  
 }
 
 .container_sign_in .image_container img{
@@ -44,11 +45,12 @@ padding:1rem 0rem;
 }
 
 .input__container .inputs input{
-    border:1px solid var(--primary-color);
-    padding:0.5rem;
+    border:1px solid rgb(30 58 138);
+    padding:0.2rem 0.2rem 0.2rem 0.5rem;
     border-radius:0.5rem;
     margin-bottom:1.5rem;
     width:100%;
+    color:rgb(30 58 138);
 
 }
 .button_container{
@@ -73,7 +75,8 @@ color:var(--third-color);
 
 }
  .btn_green{
-    background-color:var(--primary-color);
+    --tw-bg-opacity: 1;
+    background-color: rgb(30 58 138 / var(--tw-bg-opacity));
     cursor: pointer;
 
 

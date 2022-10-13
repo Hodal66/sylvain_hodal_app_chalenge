@@ -1,18 +1,16 @@
 .nav_container{
-    background-color: var(--primary-color);
+ /* position: fixed; */
     width:100vw;
     height:10%;
     display:flex;
     justify-content:space-between;
 }
 .nav_logo_container{
-   
     width:14rem;
     height:3.5rem;
     display:flex;
     align-items:center;
     justify-content:center;
-    /* height:8rem; */
 }
 .logo__image{
     width:3.5rem;
@@ -28,19 +26,42 @@
 Link{
     list-style-type: none;
 }
+.navigation__links-container {
+    justify-content: center;
+    align-items:center;
+    top:0;
+    left:-100% auto;
+    text-align:center;
+    width: 100% ;
+    transition: 0.3s;
+    z-index: -1;
+
+}
 .navigation__links-container li{
     padding : 0rem 2rem;
     list-style-type:none;
     text-decoration: none;
 }
 .navigation__links-container .btn{
-    background-color:white;
+
     padding:0.1rem 2rem;
-   width:2rem;
-    border-radius: 0.3rem;
+   width:20rem;
+   cursor: pointer;
+   color:white;
     text-decoration: none;
 }
-#long_btn{
-    padding:0.1rem rem; 
-    background: var(--third-color);
+.navigation__links-container .btn:hover{
+    /* text-decoration: underline; */
+    border: 4px inset rgb(35, 7, 177);
+    border-bottom: none;
+    border-radius:3px;
 }
+
+.btn{
+    color:var(--second-color);
+}
+
+
+
+
+

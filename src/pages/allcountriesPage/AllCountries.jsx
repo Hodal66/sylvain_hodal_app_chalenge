@@ -5,8 +5,8 @@ import HeaderImage from "../../images/header_baground1 1.png";
 import "./allCountries.css";
 import Countries from "../../components/Countries";
 import countries from "../../data";
-
 import { gql, useQuery } from "@apollo/client";
+import Pagination from "../../components/Pagination";
 
 export const GET_ALL_COUNTRIES = gql`
   query {
@@ -65,10 +65,10 @@ const override = {
   borderColor: "red",
 };
 function AllCountries() {
-    const { error, data, loading } = useQuery(GET_ALL_COUNTRIES);
-  
-    console.log(data)
-    const color = "yellow";
+  const { data, loading } = useQuery(GET_ALL_COUNTRIES);
+
+  console.log(data);
+  const color = "yellow";
   return (
     <div>
       <ClipLoader
@@ -87,8 +87,8 @@ function AllCountries() {
           and exploring All country library you are welcome🏹🚀
         </Header>
       )}
-      <section>
-        <div className="search_container">
+      <section className="flex ">
+        <div className="search_container w-1/2">
           <input
             type="search"
             name="search"
@@ -98,6 +98,9 @@ function AllCountries() {
             placeholder="Search any country you want "
           />
           <input type="button" value="Search" className="searchbtn" />
+        </div>
+        <div className="w-1/2 flex justify-around mt-8 h-full">
+          <Pagination />
         </div>
       </section>
       <section className="countries">
@@ -121,6 +124,12 @@ function AllCountries() {
           )}
         </div>
       </section>
+
+      <div className="w-full ml-10 flex justify-end bg-blue-800 pt-6">
+        <div className="w-full mr-24 mb-10 flex justify-center bg-blue-800">
+          <Pagination />
+        </div>
+      </div>
     </div>
   );
 }

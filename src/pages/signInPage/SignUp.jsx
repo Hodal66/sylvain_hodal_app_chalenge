@@ -20,14 +20,22 @@ function SignUp() {
         </div>
         <div className="input__container">
           <div className="inputs">
-            <div className="fullName">
-              <input type="text" placeholder="Enter your fullName" />
+            <div className="firstName">
+              <input
+                type="text"
+                placeholder="First Name"
+                autoFocus
+                className="text-blue-900"
+              />
+            </div>
+            <div className="latName">
+              <input type="text" placeholder="Last Name" />
             </div>
             <div className="email">
-              <input type="email" placeholder="Enter your Email" />
+              <input type="email" placeholder="Your Email" />
             </div>
             <div className="password">
-              <input type="password" placeholder="Enter your password" />
+              <input type="password" placeholder="Your password" />
             </div>
           </div>
 
@@ -38,7 +46,7 @@ function SignUp() {
             <button className="btn btn_green">Send</button>
           </div>
           <div className="goto_signin_page">
-            <p id="already">
+            <p id="already" className="text-blue-900">
               <span>
                 <Link to="/signin">Already Have an Acount ? sign in</Link>
               </span>

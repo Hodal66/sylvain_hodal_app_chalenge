@@ -1,11 +1,10 @@
 import React from "react";
 import "./navBar.css";
 import Logo from "../images/LOGO.png";
-// import { links } from "../data";
 import { Link } from "react-router-dom";
 function NavBar() {
   return (
-    <div className="container nav_container">
+    <div className=" nav_container bg-blue-900">
       <div className="nav_logo_container">
         <Link to="/">
           <img src={Logo} alt="my logo" className="logo__image" />
