@@ -49,9 +49,11 @@ function Countries({ name, image, continent, country, city, emoji }) {
                 <p>13,000 </p>
               </div>
               <div className="bg-white border rounded w-24 mt-3">
-                <button className="btn bg-blue-500 shadow-lg shadow-blue-500/50 text-xs text-white">
-                  More Stories..
-                </button>
+                <Link to="/funfact-detail">
+                  <button className="btn bg-blue-500 shadow-lg shadow-blue-500/50 text-xs text-white">
+                    More Stories..
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

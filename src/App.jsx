@@ -5,12 +5,13 @@ import NavBar from "./components/NavBar";
 import AllCountries from "./pages/allcountriesPage/AllCountries";
 import SignUp from "./pages/signInPage/SignUp";
 import SignIn from "./pages/signInPage/SignIn";
-import CreateComment from "./pages/FunsAndComents/CreateComment";
 import Gallery from "./pages/GalleryCountry/Gallery";
+import Countries from "./components/Country";
+import CountryFunFactDetail from "./pages/FunFactDetail/CountryFanFactDetail";
 
 function App() {
   return (
-    <div className="App">
+    <div className="h-screen w-full">
       <BrowserRouter>
         <NavBar />
         <Routes>
@@ -19,7 +20,9 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/gallery" element={<Gallery />} />
-          <Route path="/create-comments" element={<CreateComment />} />
+          <Route path="/funfact-detail" element={<CountryFunFactDetail />} />
+
+          <Route path="/country" element={<Countries />} />
         </Routes>
       </BrowserRouter>
     </div>

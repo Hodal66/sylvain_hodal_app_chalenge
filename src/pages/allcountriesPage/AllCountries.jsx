@@ -3,10 +3,10 @@ import ClipLoader from "react-spinners/ClipLoader";
 import Header from "../../components/Header";
 import HeaderImage from "../../images/header_baground1 1.png";
 import "./allCountries.css";
-import Countries from "../../components/Countries";
 import countries from "../../data";
 import { gql, useQuery } from "@apollo/client";
 import Pagination from "../../components/Pagination";
+import Countries from "../../components/Country";
 
 export const GET_ALL_COUNTRIES = gql`
   query {
