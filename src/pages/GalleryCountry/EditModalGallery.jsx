@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-const NewModalFunFact = ({ setOpenModal }) => {
+const EditModalGallery = ({ setOpenModal }) => {
   const [formData, setFormData] = useState(true);
 
   const handleChange = (event) => {
@@ -15,7 +15,7 @@ const NewModalFunFact = ({ setOpenModal }) => {
   };
 
   return (
-    <div className="w-screen h-screen flex justify-center items-center absolute bg-black bg-opacity-50">
+    <div className="w-screen h-screen flex justify-center items-center absolute z-40 bg-black bg-opacity-50">
       <div className="w-1/2 h-1/3 rounded-md box-border">
         <form
           action="
@@ -24,7 +24,7 @@ const NewModalFunFact = ({ setOpenModal }) => {
         >
           <div className="h-[50%] w-full px-3">
             <label htmlFor="" className="h-[25%] mb-5 font-bold">
-              Edit Comment
+              Edit Photo
             </label>
             <textarea
               name=""
@@ -44,7 +44,7 @@ const NewModalFunFact = ({ setOpenModal }) => {
                   Back
                 </button>
                 <button className="bg-regal-green h-full py-1 px-5 rounded-md hover:bg-green-400">
-                  Update Comment
+                  Update photo
                 </button>
               </div>
             </div>
@@ -55,4 +55,4 @@ const NewModalFunFact = ({ setOpenModal }) => {
   );
 };
 
-export default NewModalFunFact;
+export default EditModalGallery;

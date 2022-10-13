@@ -1,7 +1,7 @@
 import React from "react";
 import { AiTwotoneDelete } from "react-icons/ai";
 import { AiOutlineEdit } from "react-icons/ai";
-function Photo({ image, author, date }) {
+function Photo({ image, author, date, setOpenModal }) {
   return (
     <div className="bg-blue-900  rounded-lg border-white m-4 p-4">
       <div className="image-container rounded-sm border  border-white">
@@ -17,7 +17,11 @@ function Photo({ image, author, date }) {
           </p>
         </div>
         <div className="flex mt-4 gap-4 text-xl">
-          <AiOutlineEdit />
+          <AiOutlineEdit
+            onClick={() => {
+              setOpenModal(true);
+            }}
+          />
           <AiTwotoneDelete />
         </div>
       </div>

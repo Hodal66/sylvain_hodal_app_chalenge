@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "../UI/Card";
-import { Link } from "react-router-dom";
-function Countries({ name, image, continent, country, city, emoji }) {
+import { Link, useNavigate } from "react-router-dom";
+function Countries({
+  name,
+  image,
+  continent,
+  native,
+  setOpenModal,
+  _id,
+  emoji,
+}) {
+    let navigate = useNavigate();
   return (
     <div>
       <Card className="country">
@@ -11,7 +20,7 @@ function Countries({ name, image, continent, country, city, emoji }) {
             <div className="image__content">
               <div className="left__side-content pb-4">
                 <div className="text-xl text-white">
-                  {name} , {city}
+                  {name} , {native}
                 </div>
                 <div>{continent}</div>
               </div>
@@ -22,38 +31,55 @@ function Countries({ name, image, continent, country, city, emoji }) {
             <div className="related__photos pl-2 w-32 opacity-70">
               <h1>Related_Photos</h1>
               <div className="add_photos-contents ">
-                <Link to="/signin">
-                  <button className="plus_btn bg-white text-black  rounded pr-2 pl-2 ">
-                    +
-                  </button>
-                </Link>
+                <button
+                  className="plus_btn bg-white text-black  rounded pr-2 pl-2 "
+                  onClick={() => {
+                    setOpenModal(true);
+                  }}
+                >
+                  +
+                </button>
 
                 <p>13,000 </p>
               </div>
               <div className="bg-white border rounded w-24 mt-3">
-                <Link to="/gallery">
-                  <button className="btn bg-blue-500 shadow-lg shadow-blue-500/50 text-xs text-white">
-                    More Photos..
-                  </button>
-                </Link>
+                {/* <Link to="/gallery"> */}
+                <button
+                  className="btn bg-blue-500 shadow-lg shadow-blue-500/50 text-xs text-white"
+                  onClick={() => {
+                    navigate(`/gallery/${_id}`);
+                    // /subject/36236423463427jhdsjhf/ywejkhjshjkhsdjkhf
+                  }}
+                >
+                  More Photos..
+                </button>
+                {/* </Link> */}
               </div>
             </div>
             <div className="related__photos pl-2 pb-2 w-32 opacity-70">
               <h1>Related_Stories</h1>
               <div className="add_photos-contents">
-                <Link to="/signin">
-                  <button className="plus_btn bg-white text-black rounded pr-2 pl-2 ">
-                    +
-                  </button>
-                </Link>
+                <button
+                  className="plus_btn bg-white text-black rounded pr-2 pl-2 "
+                  onClick={() => {
+                    setOpenModal(true);
+                  }}
+                >
+                  +
+                </button>
                 <p>13,000 </p>
               </div>
               <div className="bg-white border rounded w-24 mt-3">
-                <Link to="/funfact-detail">
-                  <button className="btn bg-blue-500 shadow-lg shadow-blue-500/50 text-xs text-white">
+                {/* <Link to="/funfact-detail"> */}
+                  <button
+                    className="btn bg-blue-500 shadow-lg shadow-blue-500/50 text-xs text-white"
+                    onClick={() => {
+                      navigate(`/funfact-detail/${_id}`);
+                    }}
+                  >
                     More Stories..
                   </button>
-                </Link>
+                {/* </Link> */}
               </div>
             </div>
           </div>

@@ -19,8 +19,8 @@ function App() {
           <Route path="/allcountries" element={<AllCountries />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signin" element={<SignIn />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/funfact-detail" element={<CountryFunFactDetail />} />
+          <Route path="/gallery/:countryId" element={<Gallery />} />
+          <Route path="/funfact-detail/:countryId" element={<CountryFunFactDetail />} />
 
           <Route path="/country" element={<Countries />} />
         </Routes>
