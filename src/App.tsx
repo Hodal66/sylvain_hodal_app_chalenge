@@ -6,7 +6,9 @@ import {
 	Link
 } from 'react-router-dom';
 import TestTailwind from "./components/TestTailwind";
+import FilterTrainee from './pages/FilterTeainee/FilterTrainee';
 import './index.css'
+import ImportTraineeDetailsFromGoogleSheet from './pages/importMultipleTrainee/ImportTraineeDetailsFromGoogleSheet';
 
 // function App() {
 //   return (
@@ -23,6 +25,11 @@ function App() {
     <Routes>
       <Route path="/test_redux" element={<Counter />} />
       <Route path="/test_tailwind" element={<TestTailwind />} />
+      <Route path="/filter_trainee" element={<FilterTrainee />} />
+      <Route
+        path="/import_trainee"
+        element={<ImportTraineeDetailsFromGoogleSheet />}
+      />
     </Routes>
   );
 }
