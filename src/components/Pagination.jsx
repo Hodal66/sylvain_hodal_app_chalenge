@@ -2,7 +2,7 @@ import React from "react";
 import { FaStepForward, FaStepBackward } from "react-icons/fa";
 function Pagination({ setPage }) {
   return (
-    <div className="border w-1/2 rounded-xl ">
+    <div className="border w-[80%] rounded-xl ml-10 ">
       <div className="  bg-white rounded-xl flex  justify-around p-1">
         <div
           className=" p-1 flex rounded-sm bg-white text-blue-500 cursor-pointer"

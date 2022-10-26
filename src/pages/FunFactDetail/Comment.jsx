@@ -4,32 +4,37 @@ import { MdDelete } from "react-icons/md";
 import { AUTH_TOKEN } from "../../constants";
 import jwt_decode from "jwt-decode";
 
-
 const Comment = ({ setOpenModal, comment }) => {
-     const userIdFetched = jwt_decode(localStorage.getItem(AUTH_TOKEN));
+   const date_readable = comment.date_posted.toString();
+   console.log(date_readable)
+   const date_arr = date_readable.split("GMT");
+   
+   const date = date_arr[0];
+  const userIdFetched = jwt_decode(localStorage.getItem(AUTH_TOKEN));
 
   const openIt = () => {
-    console.log("yes you hit");
     setOpenModal(true);
   };
   return (
-    <div className="h-fit mt-8 p-5 bg-regal-green w-full rounded-xl">
-      <div className="flex justify-between text-blue-700 font-bold pb-3">
+    <div className="h-fit mt-8 p-5  w-full bg-blue-900  border shadow-inner">
+      <div className="flex justify-between text-blue-200   font-bold pb-3">
         <span>
           {comment.author.firstName} {comment.author.secondName}
-          {userIdFetched.userId === comment.author._id && (<span> , You</span>)}
+          {userIdFetched.userId === comment.author._id && (
+            <span className="text-blue-500  italic "> , You</span>
+          )}
         </span>
-        <span>on 12/20/2022</span>
+        <span>posted on {date}</span>
       </div>
-      <div className="text-xl">{comment.content}</div>
+      <div className="text-lg  text-blue-300">{comment.content}</div>
       <div className="flex justify-end text-sm">
         {userIdFetched.userId === comment.author._id && (
           <div className="w-[20%] flex justify-evenly pt-3">
             <FiEdit
-              className="w-[30px] h-[30px] cursor-pointer"
+              className="w-[20px] h-[20px] cursor-pointer"
               onClick={openIt}
             />
-            <MdDelete className="w-[30px] h-[30px] cursor-pointer" />
+            <MdDelete className="w-[20px] h-[20px] cursor-pointer" />
           </div>
         )}
       </div>

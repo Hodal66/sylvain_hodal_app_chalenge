@@ -6,7 +6,6 @@ import { gql, useMutation } from "@apollo/client";
 import { AUTH_TOKEN } from "../../constants";
 import jwt_decode from "jwt-decode";
 
-
 const LOGIN_USER = gql`
   mutation login_user($email: String!, $password: String!) {
     login_user(email: $email, password: $password) {
@@ -71,7 +70,7 @@ function SignIn() {
             <p id="sign_up_txt">Sign up</p>
           </div>
         </div>
-        <div className="input__container">
+        <div className="input__container bg-blue-300">
           <div className="inputs">
             <div className="email">
               <input

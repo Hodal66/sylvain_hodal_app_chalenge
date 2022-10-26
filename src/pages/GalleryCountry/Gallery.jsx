@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-distracting-elements */
 import React, { useState } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
 import "./gallery.css";
@@ -69,7 +70,6 @@ function Gallery() {
   const [openModal, setOpenModal] = useState(false);
   const [openModal2, setOpenModal2] = useState(false);
 
-
   console.log(data);
   const color = "yellow";
 
@@ -91,26 +91,34 @@ function Gallery() {
           <div className="flex justify-center">
             <div className="text-xl">
               <h1 className="text-6xl">WelCome to This Gallery</h1>
-              <p className="ml-16">
-                {" "}
-                Now Enjoy New world by exploring by searching your prefered{" "}
-                <br />
-                country and exploring All country library you are welcome🏹🚀
-              </p>
+              <marquee
+                width="100%"
+                className="bg-blue-900"
+                scrolldelay="100"
+                behavior="alternate"
+              >
+                <p className="ml-16">
+                  {" "}
+                  Now Enjoy New world by exploring by searching your prefered{" "}
+                  <br />
+                  country and exploring All country library you are welcome🏹🚀
+                </p>
+              </marquee>
             </div>
           </div>
         </div>
       )}
       <div className="flex justify-between mx-2 mr-10">
         <div className="">
-          <h1 className="text-2xl flex">
+          <h1 className="text-2xl flex ml-8">
             <MdLocationPin className=" ml-4 text-4xl" />
-            <span className="text-blue-300"> Rwanda , Kigali</span>
+            <span className="text-blue-300 mx-4">Location:</span>
+            Rwanda
           </h1>
         </div>
         <h1 className="">Gallery</h1>
         <button
-          className="bg-white text-blue-900 h-1/2 p-2 mt-8 ml-24 rounded-lg"
+          className="bg-white text-blue-900 h-1/2 p-2 mt-8 ml-24 rounded-lg hover:bg-blue-900 hover:text-blue-100"
           onClick={() => {
             setOpenModal(true);
           }}
@@ -135,6 +143,19 @@ function Gallery() {
                 </>
               );
             })}
+            {/* {galleryPhotoes.map(({ id, author, image, date }) => {
+              return (
+                <>
+                  <Photo
+                    key={id}
+                    setOpenModal={setOpenModal2}
+                    author={author}
+                    image={image}
+                    date={date}
+                  ></Photo>
+                </>
+              );
+            })} */}
           </div>
         </section>
       </section>

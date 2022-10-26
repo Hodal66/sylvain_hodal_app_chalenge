@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Card from "../UI/Card";
-import {  useNavigate } from "react-router-dom";
+import { MdAddPhotoAlternate } from "react-icons/md";
+import { BiMessageRoundedAdd } from "react-icons/bi";
+import { useNavigate } from "react-router-dom";
 import { AUTH_TOKEN } from "../constants";
 function Countries({
   name,
@@ -10,9 +12,9 @@ function Countries({
   setOpenModal,
   _id,
   emoji,
-  comments
+  comments,
 }) {
-    let navigate = useNavigate();
+  let navigate = useNavigate();
   const token = localStorage.getItem(AUTH_TOKEN);
   // const [Token, setToken] = useState(token);
 
@@ -24,7 +26,7 @@ function Countries({
             <img src={image} alt={name} />
             <div className="image__content">
               <div className="left__side-content pb-4">
-                <div className="text-xl text-white">
+                <div className="text-sm text-white">
                   {name} , {native}
                 </div>
                 <div>{continent}</div>
@@ -32,9 +34,9 @@ function Countries({
               <div className="right__side-content">{emoji}</div>
             </div>
           </div>
-          <div className="buttons_controls-container flex gap-3">
-            <div className="related__photos pl-2 w-32 opacity-70">
-              <h1>Related_Photos</h1>
+          <div className="buttons_controls-container flex gap-1">
+            <div className="related__photos pl-2 w-28 opacity-70 ">
+              <h1 className="text-sx ">Related_Photos</h1>
               <div className="add_photos-contents ">
                 {token && (
                   <button
@@ -43,16 +45,16 @@ function Countries({
                       setOpenModal(true);
                     }}
                   >
-                    +
+                    <MdAddPhotoAlternate />
                   </button>
                 )}
 
-                <p>13,000 </p>
+                <p className="text-xs">13,000 </p>
               </div>
-              <div className="bg-white border rounded w-24 mt-3">
+              <div className="bg-white border rounded w-20 mt-3">
                 {/* <Link to="/gallery"> */}
                 <button
-                  className="btn bg-blue-500 shadow-lg shadow-blue-500/50 text-xs text-white"
+                  className="btn bg-blue-500 shadow-lg shadow-blue-500/50  text-white related_content"
                   onClick={() => {
                     navigate(`/gallery/${_id}`);
                     // /subject/36236423463427jhdsjhf/ywejkhjshjkhsdjkhf
@@ -63,7 +65,7 @@ function Countries({
                 {/* </Link> */}
               </div>
             </div>
-            <div className="related__photos pl-2 pb-2 w-32 opacity-70">
+            <div className="related__photos pl-2 pb-2 w-28 opacity-70">
               <h1>Related_Stories</h1>
               <div className="add_photos-contents">
                 {token && (
@@ -73,15 +75,15 @@ function Countries({
                       setOpenModal(true);
                     }}
                   >
-                    +
+                    <BiMessageRoundedAdd />
                   </button>
                 )}
-                <p> {comments.length} </p>
+                <p className="text-xs"> {comments.length} </p>
               </div>
-              <div className="bg-white border rounded w-24 mt-3">
+              <div className="bg-white border rounded w-20 mt-3">
                 {/* <Link to="/funfact-detail"> */}
                 <button
-                  className="btn bg-blue-500 shadow-lg shadow-blue-500/50 text-xs text-white"
+                  className="btn bg-blue-500 shadow-lg shadow-blue-500/50  text-white related_content"
                   onClick={() => {
                     navigate(`/funfact-detail/${_id}`);
                   }}

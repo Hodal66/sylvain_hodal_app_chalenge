@@ -1,12 +1,19 @@
+
+.all__country-container{
+  width: 100%;
+  overflow: hidden;
+}
+
 .search_container {
   margin: 2rem;
   padding-left: 4rem;
 }
 .search_container .search {
   padding: 0.5rem 1rem;
-  width: 22rem;
+  width: 16rem;
   border-radius: 1rem 0rem 0rem 1rem;
   border: none;
+  color:#1d1b96;
 }
 .search_container .searchbtn {
   padding: 0.5rem 1rem;
@@ -25,13 +32,14 @@
  .card{
   background-color: var(--primary-color);
   margin:1rem;
-  width:21rem;
+  width:18.5rem;
   border-radius:2rem 0.5rem 2rem 0.5rem;
  padding:1rem;
- box-shadow: 1px 0.5px 10px var(--primary-color);
+ box-shadow: 2px 2px 2px #4240e7;
 }
 .card:hover{
   background-color: var(--primary-hover-bg-color);
+  box-shadow: 4px 4px 4px rgb(20, 11, 117);
 }
 /* All about C0ouuntries */
 .container-container{
@@ -63,7 +71,7 @@ flex-direction: column;
 }
 
 .image__content h1, h2{
-font-size:1rem;
+font-size:0.2rem;
 }
 
 .image__content h1{
@@ -101,27 +109,28 @@ font-size:1rem;
   display:grid;
   grid-template-columns:1fr 1fr 1fr;
   padding:1.5rem;
+  margin:0rem 4rem;
 }
 
-.black__btn{
+/* .black__btn{
   background-color: var(--third-color);
-}
+} */
 
-.buttons_controls-container .black__btn{
+/* .buttons_controls-container .black__btn{
   border-radius: 0.2rem;
   padding-bottom:0.5rem;
  
-}
+} */
 .buttons_controls-container p{
   margin-left: 1rem;
 }
 .buttons_controls-container .btn{
   border-radius: 0.2rem;
-  padding:0.3rem 0.5rem;
+  padding:0.3rem 0.2rem;
 
 }
 .buttons_controls-container .btn:hover{
-  width:7rem;
+  width:5rem;
 }
 .plus_btn:hover{
   background-color: var(--second-color);
@@ -137,10 +146,28 @@ border: 1px solid rgb(20, 11, 117);
 box-shadow: 4px 4px 4px rgb(20, 11, 117);
 border-radius:0.5rem;
 margin-top: 0.5rem;
-width:60%;
+width:20%;
 }
 .related__photos:hover{
 border: 1px solid rgb(81, 73, 173);
 box-shadow: 4px 4px 4px rgb(81, 73, 173);
 
+}
+
+.related__photos h1{
+  font-size:0.7rem;
+}
+
+
+/* Header_content part 2 */
+
+.Header_content{
+  background-image: url("../../assets/b.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 30vh;
+}
+
+.related_content{
+  font-size:0.5rem;
 }
