@@ -36,15 +36,15 @@ const NewModalFunFact = ({ setOpenModal }) => {
             <div className="flex w-full items-center h-full">
               <div className="flex w-[40%] justify-between">
                 <button
-                  className="bg-regal-green h-full py-1 px-5 rounded-md hover:bg-green-400"
+                  className="bg-blue-700 h-full py-1 px-5 rounded-md hover:bg-blue-400"
                   onClick={() => {
                     setOpenModal(false);
                   }}
                 >
                   Back
                 </button>
-                <button className="bg-regal-green h-full py-1 px-5 rounded-md hover:bg-green-400">
-                  Update Comment
+                <button className="bg-blue-700 h-full py-1 px-5 rounded-md hover:bg-blue-400">
+                  Update
                 </button>
               </div>
             </div>

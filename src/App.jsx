@@ -11,20 +11,22 @@ import CountryFunFactDetail from "./pages/FunFactDetail/CountryFanFactDetail";
 
 function App() {
   return (
-    <div className="h-screen w-full">
-      <BrowserRouter>
-        <NavBar />
-        <Routes>
-          <Route exactry path="/" element={<Home />} />
-          <Route path="/allcountries" element={<AllCountries />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/signin" element={<SignIn />} />
-          <Route path="/gallery/:countryId" element={<Gallery />} />
-          <Route path="/funfact-detail/:countryId" element={<CountryFunFactDetail />} />
-
-          <Route path="/country" element={<Countries />} />
-        </Routes>
-      </BrowserRouter>
+    <div className="h-screen w-full font-popins">
+        <BrowserRouter>
+          <NavBar />
+          <Routes>
+            <Route exactry path="/" element={<Home />} />
+            <Route path="/allcountries" element={<AllCountries />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/signin" element={<SignIn />} />
+            <Route path="/gallery/:countryId" element={<Gallery />} />
+            <Route
+              path="/funfact-detail/:countryId"
+              element={<CountryFunFactDetail />}
+            />
+            <Route path="/country" element={<Countries />} />
+          </Routes>
+        </BrowserRouter>
     </div>
   );
 }

@@ -4,63 +4,42 @@ import { useNavigate } from "react-router-dom";
 import { client } from "../..";
 import RingLoader from "react-spinners/RingLoader";
 import { GET_ONE_COUNTRY_FACTS } from "./CountryFanFactDetail";
-import { GET_ALL_COUNTRIES } from "../allcountriesPage/AllCountries";
 
-const ADD_COMMENT = gql`
-  mutation Mutation(
-    $countryId: ID!
-    $author: ID!
-    $content: String!
-    # $datePosted: String!
-  ) {
-    addComment(
-      country_id: $countryId
-      author: $author
-      content: $content
-      # date_posted: $datePosted
-    ) {
-      date_posted
-      author
+const UPDATE_COMMENT = gql`
+  mutation ($content: String!, $commentId: ID!) {
+    updateComment(content: $content, comment_id: $commentId) {
       content
-      _id
     }
   }
 `;
 
-const AddModalFunFact = ({
+const UpdateModalFunFact = ({
   setOpenModal,
+  comment_id,
   country_id,
-  user_id,
-  isCardClicked,
+  content_to_update,
 }) => {
-  const [content, setContent] = useState("");
+  console.log(comment_id);
+  const [content, setContent] = useState(content_to_update);
   let navigate = useNavigate();
 
   const handleContentChange = (e) => {
     setContent(e.target.value);
   };
 
-  const [add_comment, { loading }] = useMutation(ADD_COMMENT, {
+  const [update_comment, { loading }] = useMutation(UPDATE_COMMENT, {
     variables: {
-      countryId: country_id,
-      author: user_id,
       content: content,
+      commentId: comment_id,
       // datePosted: "2/2/2022",
     },
-    onCompleted: async ({ addComment }) => {
-     
-      if (isCardClicked) {
-          await client.refetchQueries({
-            include: [GET_ALL_COUNTRIES],
-          });
-        navigate(`/allcountries`);
-      } else {
-         await client.refetchQueries({
-           include: [GET_ONE_COUNTRY_FACTS],
-         });
-      navigate(`/funfact-detail/${country_id}`);
+    onCompleted: async ({ updateComment }) => {
+      console.log(updateComment);
+      await client.refetchQueries({
+        include: [GET_ONE_COUNTRY_FACTS],
+      });
 
-      }
+      navigate(`/funfact-detail/${country_id}`);
       setOpenModal(false);
     },
     onError: (errors) => {
@@ -72,14 +51,14 @@ const AddModalFunFact = ({
   const handleClick = (event) => {
     event.preventDefault();
     if (!content) return;
-    add_comment();
+    update_comment();
   };
 
-   const color = "white";
-   const override = {
-     display: "inline",
-     margin: "0 auto",
-   };
+  const color = "white";
+  const override = {
+    display: "inline",
+    margin: "0 auto",
+  };
 
   return (
     <div className="w-screen h-screen flex justify-center items-center absolute z-40 bg-black bg-opacity-50">
@@ -91,7 +70,7 @@ const AddModalFunFact = ({
         >
           <div className="h-[50%] w-full px-3">
             <label htmlFor="" className="h-[25%] mb-5 font-bold">
-              Add Fun Fact to the country
+              Update Funfact posted on the country.
             </label>
             <textarea
               onChange={handleContentChange}
@@ -103,11 +82,12 @@ const AddModalFunFact = ({
           </div>
           <div className="h-[20%] w-full px-3">
             <div className="flex w-full items-center h-full">
-              <div className="flex w-[40%] justify-between">
+              <div className="flex w-[45%] justify-between">
                 <button
                   className="bg-blue-700 h-full py-1 px-5 rounded-md hover:bg-blue-400"
                   onClick={() => {
                     setOpenModal(false);
+                    setContent("");
                   }}
                 >
                   Back
@@ -118,9 +98,9 @@ const AddModalFunFact = ({
                   type="submit"
                 >
                   {loading ? (
-                    <span className="text-blue-900">Saving fun fact</span>
+                    <span className="text-blue-900">Updating fun fact</span>
                   ) : (
-                    <span>Add Fun Fact</span>
+                    <span>Update Fun Fact</span>
                   )}
                   <span>
                     <RingLoader
@@ -142,4 +122,4 @@ const AddModalFunFact = ({
   );
 };
 
-export default AddModalFunFact;
+export default UpdateModalFunFact;

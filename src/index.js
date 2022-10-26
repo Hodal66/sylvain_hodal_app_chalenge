@@ -31,9 +31,9 @@ const authLink = setContext((_, { headers }) => {
 
 export const client = new ApolloClient({
   link: authLink.concat(httpLinkUpload),
-  fetchOptions: {
-    mode: 'no-cors',
-  },
+  // fetchOptions: {
+  //   mode: 'no-cors',
+  // },
   cache: new InMemoryCache(),
 });
 

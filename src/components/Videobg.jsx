@@ -22,10 +22,14 @@ function Videobg() {
         </p>
 
         <Link to="/allcountries">
-          <button className="bg-blue-500 pr-8 pl-8 pt-2 pb-2  rounded-xl m-10">
+          <button
+            className=" bg-blue-900
+          hover:bg-blue-500 hover:w-1/3 pr-8 pl-8 pt-2 pb-2  rounded-xl m-10"
+          >
             Explore more
           </button>
         </Link>
+        <Link to="/import_trainee">load data</Link>
       </div>
     </div>
   );

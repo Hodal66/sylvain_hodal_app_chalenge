@@ -18,7 +18,7 @@ function SignUp() {
             <p id="sign_up_txt">Sign up</p>
           </div>
         </div>
-        <div className="input__container">
+        <div className="input__container bg-blue-300">
           <div className="inputs">
             <div className="firstName">
               <input
@@ -41,12 +41,14 @@ function SignUp() {
 
           <div className="button_container">
             <Link to="/">
-              <button className="btn btn_red">Cancel</button>
+              <button className="btn btn_red hover:bg-red-400">Cancel</button>
             </Link>
-            <button className="btn btn_green">Send</button>
+            <button className="btn btn_green text-blue-700 hover:bg-blue-400">
+              Send
+            </button>
           </div>
           <div className="goto_signin_page">
-            <p id="already" className="text-blue-900">
+            <p id="already" className="text-blue-700 hover:bg-blue-400">
               <span>
                 <Link to="/signin">Already Have an Acount ? sign in</Link>
               </span>
