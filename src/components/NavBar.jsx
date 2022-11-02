@@ -25,6 +25,7 @@ function NavBar() {
           </li>
 
           <li>
+            {}
             <Link to="/signin" className="btn">
               sign in
             </Link>

@@ -9,9 +9,6 @@ import { setContext } from "@apollo/client/link/context";
 import { AUTH_TOKEN } from './constants';
 import { createUploadLink } from 'apollo-upload-client';
 
-// const httpLink = createHttpLink({
-//   uri: 'http://localhost:4000/',
-// });
 
 const httpLinkUpload = createUploadLink({
   uri: "http://localhost:4000/",

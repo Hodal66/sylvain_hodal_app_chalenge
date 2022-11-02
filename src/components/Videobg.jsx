@@ -29,7 +29,6 @@ function Videobg() {
             Explore more
           </button>
         </Link>
-        <Link to="/import_trainee">load data</Link>
       </div>
     </div>
   );
