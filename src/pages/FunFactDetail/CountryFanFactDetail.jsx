@@ -69,7 +69,8 @@ const CountryFunFactDetail = () => {
       getOneCountryId: params.countryId,
     },
   });
-  const userIdFetched = jwt_decode(localStorage.getItem(AUTH_TOKEN));
+ const token = localStorage.getItem(AUTH_TOKEN);
+ const userIdFetched = token && jwt_decode(localStorage.getItem(AUTH_TOKEN));
 
   return (
     <div className="w-full h-full grid grid-rows-12 grid-cols-12 overflow-y-scroll backgroung_Comment_image">
@@ -111,7 +112,7 @@ const CountryFunFactDetail = () => {
               {data && data.getOneCountry.name}
             </div>
             <div className="text-3xl">Fun Fact </div>
-            <div className="bg-white text-black px-4 py-2 mt-2 rounded hover:bg-blue-900 hover:text-white">
+           {userIdFetched && userIdFetched.userId ? ( <div className="bg-white text-black px-4 py-2 mt-2 rounded hover:bg-blue-900 hover:text-white">
               <button
                 className="cursor-pointer"
                 onClick={() => {
@@ -120,7 +121,7 @@ const CountryFunFactDetail = () => {
               >
                 Add Fact
               </button>
-            </div>
+            </div>): ""}
           </div>
           <div className="flex p-10  w-full rounded-2xl justify-evenly">
             <div className="bg-blue-200 p-4 rounded-md text-black">

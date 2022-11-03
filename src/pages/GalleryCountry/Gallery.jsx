@@ -104,7 +104,9 @@ const override = {
 };
 
 function Gallery() {
-  const userIdFetched = jwt_decode(localStorage.getItem(AUTH_TOKEN));
+  // const userIdFetched = jwt_decode(localStorage.getItem(AUTH_TOKEN));
+  const token = localStorage.getItem(AUTH_TOKEN);
+  const userIdFetched = token && jwt_decode(localStorage.getItem(AUTH_TOKEN));
   let params = useParams();
 
   const [openModal, setOpenModal] = useState(false);
@@ -172,14 +174,14 @@ function Gallery() {
           </h1>
         </div>
         <h1 className="text-3xl">Gallery</h1>
-        <button
+       {userIdFetched && userIdFetched.userId ? ( <button
           className="bg-white text-blue-900 h-1/2 p-2 mt-8 ml-24 rounded-lg hover:bg-blue-900 hover:text-blue-100"
           onClick={() => {
             setOpenModal(true);
           }}
         >
           Add Photo
-        </button>
+        </button>): ("")}
       </div>
       <section className="Section-container">
         <section className="countries">

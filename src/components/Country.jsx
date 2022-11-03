@@ -21,7 +21,7 @@ function Countries({
 }) {
   let navigate = useNavigate();
   const token = localStorage.getItem(AUTH_TOKEN);
-  const userIdFetched = jwt_decode(localStorage.getItem(AUTH_TOKEN));
+   const userIdFetched = token && jwt_decode(localStorage.getItem(AUTH_TOKEN));
 
 const handleOpenModelAndPassDataUp = () => {
     captureDataOfTheSelectedCard({ country_id:_id, user_id: userIdFetched.userId });

@@ -18,7 +18,9 @@ export const DELETE_ONE_IMAGE = gql`
 `;
 
 function Photo({ imageObject, country_id }) {
-  const userIdFetched = jwt_decode(localStorage.getItem(AUTH_TOKEN));
+  // const userIdFetched = jwt_decode(localStorage.getItem(AUTH_TOKEN));
+  const token = localStorage.getItem(AUTH_TOKEN);
+   const userIdFetched = token && jwt_decode(localStorage.getItem(AUTH_TOKEN));
 
 
 let navigate = useNavigate();

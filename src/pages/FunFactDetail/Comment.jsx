@@ -30,7 +30,8 @@ const Comment = ({
   // const date_arr = date_readable.split("GMT");
 
   // const date = date_arr[0];
-  const userIdFetched = jwt_decode(localStorage.getItem(AUTH_TOKEN));
+  const token = localStorage.getItem(AUTH_TOKEN);
+  const userIdFetched = token && jwt_decode(localStorage.getItem(AUTH_TOKEN));
 // const dates = new Date(date);
 // console.log(dates.toString())
   const [delete_comment, { loading }] = useMutation(DELETE_ONE_COMMENT, {
